@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://diklkfctacsh4"]
+
+[ext_resource type="Script" uid="uid://8d5knofyh4pb" path="res://Cenas/title_screen.gd" id="1_147ya"]
+[ext_resource type="Texture2D" uid="uid://d4njbcpan0dem" path="res://Assets Super Mario Bros/imagens/dcrz5nh-97af31cf-38e5-43fa-9e87-0ed13641c175.png" id="1_848dy"]
+[ext_resource type="Texture2D" uid="uid://dsmrc6eeexokl" path="res://Assets Super Mario Bros/imagens/dfq8x6t-9a3d8256-fcb9-4601-84c6-9db43f96f2c9.png" id="2_147ya"]
+[ext_resource type="Theme" uid="uid://b8f05ug2mfvss" path="res://Resources/botoes/default_btn.tres" id="3_jtjwa"]
+[ext_resource type="Texture2D" uid="uid://b0n0kvdvkeh8f" path="res://Assets Super Mario Bros/imagens/Mario_legal.webp" id="4_l05ng"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_848dy"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_147ya")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_848dy")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="game_logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_147ya")
+
+[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_jtjwa")
+theme_override_font_sizes/font_size = 35
+text = "START"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_848dy")
+
+[node name="credits_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_jtjwa")
+theme_override_font_sizes/font_size = 35
+text = "CREDITS"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_848dy")
+
+[node name="quit_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_jtjwa")
+theme_override_font_sizes/font_size = 35
+text = "QUIT GAME"
+
+[node name="mario" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("4_l05ng")
+expand_mode = 2
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/credits_btn" to="." method="_on_credits_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]

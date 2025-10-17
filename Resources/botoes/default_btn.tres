@@ -1,0 +1,51 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b8f05ug2mfvss"]
+
+[ext_resource type="FontFile" uid="uid://dviig7jsdagow" path="res://Assets Super Mario Bros/Fonts/RetroMario-Regular.otf" id="1_xdcqs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rtvp"]
+bg_color = Color(1, 0.346559, 0.245097, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.788123, 0.190378, 0, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk4vy"]
+bg_color = Color(1, 0.346559, 0.245097, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.788123, 0.190378, 0, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdry8"]
+bg_color = Color(0.788123, 0.190378, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.684479, 0.160214, 9.62615e-08, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3s0j8"]
+bg_color = Color(1, 0.346559, 0.245097, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.788123, 0.190378, 0, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("1_xdcqs")
+Button/styles/focus = SubResource("StyleBoxFlat_2rtvp")
+Button/styles/hover = SubResource("StyleBoxFlat_fk4vy")
+Button/styles/normal = SubResource("StyleBoxFlat_jdry8")
+Button/styles/pressed = SubResource("StyleBoxFlat_3s0j8")
