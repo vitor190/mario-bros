@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dht2hsiuuh23x"]
+
+[ext_resource type="FontFile" uid="uid://cqlh2bnndntka" path="res://Assets Super Mario Bros/Fonts/Urban Shadow Sans Serif.otf" id="1_5vcb0"]
+[ext_resource type="Texture2D" uid="uid://doexqyq4ke70g" path="res://Assets Super Mario Bros/imagens/dh17gz8-2ae21a7d-ea30-4840-ab4c-ac4769d38417.jpg" id="2_ct8y5"]
+
+[node name="creditos" type="TextureRect"]
+offset_right = 1334.0
+offset_bottom = 750.0
+size_flags_horizontal = 0
+texture = ExtResource("2_ct8y5")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+theme_override_fonts/font = ExtResource("1_5vcb0")
+theme_override_font_sizes/font_size = 40
+text = "CREDITOS:
+
+
+VITOR CESAR - 2315767
+
+GUILHERME - 
+
+MATHEUS -"
+horizontal_alignment = 1
+vertical_alignment = 1
