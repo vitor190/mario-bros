@@ -8,29 +8,29 @@
 [ext_resource type="PackedScene" uid="uid://roaurgbg6jr2" path="res://Cenas/goomba.tscn" id="6_n00j1"]
 [ext_resource type="PackedScene" uid="uid://b63xhr82wmyxy" path="res://Cenas/koopa.tscn" id="7_x6di6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6di6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n00j1"]
 texture = ExtResource("1_lb8y5")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_btbr3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6di6"]
 texture = ExtResource("2_ja1os")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjrtw"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_btbr3"]
 texture = ExtResource("3_qns0q")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7yi6i"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjrtw"]
 texture = ExtResource("4_n00j1")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_irhh0"]
 physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_x6di6")
-sources/1 = SubResource("TileSetAtlasSource_btbr3")
-sources/2 = SubResource("TileSetAtlasSource_jjrtw")
-sources/3 = SubResource("TileSetAtlasSource_7yi6i")
+sources/0 = SubResource("TileSetAtlasSource_n00j1")
+sources/1 = SubResource("TileSetAtlasSource_x6di6")
+sources/2 = SubResource("TileSetAtlasSource_btbr3")
+sources/3 = SubResource("TileSetAtlasSource_jjrtw")
 
 [node name="Main" type="Node"]
 
