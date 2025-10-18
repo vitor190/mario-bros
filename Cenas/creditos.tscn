@@ -1,7 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://dht2hsiuuh23x"]
+[gd_scene load_steps=9 format=3 uid="uid://dht2hsiuuh23x"]
 
 [ext_resource type="FontFile" uid="uid://cqlh2bnndntka" path="res://Assets Super Mario Bros/Fonts/Urban Shadow Sans Serif.otf" id="1_5vcb0"]
 [ext_resource type="Texture2D" uid="uid://doexqyq4ke70g" path="res://Assets Super Mario Bros/imagens/dh17gz8-2ae21a7d-ea30-4840-ab4c-ac4769d38417.jpg" id="2_ct8y5"]
+[ext_resource type="Texture2D" uid="uid://c70m1phq8vlpi" path="res://Assets Super Mario Bros/imagens/the-cartoon-back-arrow-button-is-isolated-flat-design-png.webp" id="3_0ep0f"]
+[ext_resource type="Script" uid="uid://ccwp7xlfjnaah" path="res://Cenas/button.gd" id="4_y3t63"]
+
+[sub_resource type="Theme" id="Theme_0ep0f"]
+Label/colors/font_color = Color(0.364706, 0.72549, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3t63"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ep0f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="Theme" id="Theme_y3t63"]
+Button/styles/focus = SubResource("StyleBoxFlat_y3t63")
+Button/styles/hover = SubResource("StyleBoxFlat_0ep0f")
 
 [node name="creditos" type="TextureRect"]
 offset_right = 1334.0
@@ -9,10 +26,11 @@ offset_bottom = 750.0
 size_flags_horizontal = 0
 texture = ExtResource("2_ct8y5")
 
-[node name="Label" type="Label" parent="."]
+[node name="nomes" type="Label" parent="."]
 layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 648.0
+theme = SubResource("Theme_0ep0f")
 theme_override_fonts/font = ExtResource("1_5vcb0")
 theme_override_font_sizes/font_size = 40
 text = "CREDITOS:
@@ -25,3 +43,16 @@ GUILHERME -
 MATHEUS -"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="voltar_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 18.0
+offset_right = 231.0
+offset_bottom = 226.0
+scale = Vector2(0.4, 0.4)
+theme = SubResource("Theme_y3t63")
+icon = ExtResource("3_0ep0f")
+script = ExtResource("4_y3t63")
+
+[connection signal="pressed" from="voltar_btn" to="voltar_btn" method="_on_pressed"]
