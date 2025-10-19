@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvmo0w8tr5ej1"]
+
+[ext_resource type="Script" uid="uid://cphqdn7kpbi1o" path="res://Cenas/flower.gd" id="1_bxrvb"]
+[ext_resource type="Texture2D" uid="uid://cynte3knrg7rl" path="res://Assets Super Mario Bros/Sprites/ShootingFlower.png" id="2_2b8x5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7mtfh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2b8x5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shcg1"]
+size = Vector2(16, 16)
+
+[node name="flower" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_bxrvb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7mtfh")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_shcg1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

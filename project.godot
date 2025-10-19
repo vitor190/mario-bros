@@ -14,6 +14,10 @@ config/name="mariobros"
 run/main_scene="uid://d0pxqyp5sxncl"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[autoload]
+
+Globals="*res://Assets Super Mario Bros/Sprites/globals.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"

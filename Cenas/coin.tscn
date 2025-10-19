@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1nykfeji83ug"]
+
+[ext_resource type="Script" uid="uid://emonsctcw1bj" path="res://Cenas/coin.gd" id="1_h1w1y"]
+[ext_resource type="Texture2D" uid="uid://d7iqe7ort45q" path="res://Assets Super Mario Bros/Sprites/Coin1.png" id="1_qj7px"]
+[ext_resource type="Texture2D" uid="uid://boarwxnd8uqy8" path="res://Assets Super Mario Bros/Sprites/Coin2.png" id="2_h1w1y"]
+[ext_resource type="Texture2D" uid="uid://rc8mt153lydh" path="res://Assets Super Mario Bros/Sprites/Coin3.png" id="3_xfu2f"]
+[ext_resource type="Texture2D" uid="uid://wn4dcjfa6g3m" path="res://Assets Super Mario Bros/Sprites/Coin4.png" id="4_dq7gk"]
+[ext_resource type="Texture2D" uid="uid://chuapn6nws5ff" path="res://Assets Super Mario Bros/Sprites/Coin.png" id="5_45xcn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdkwb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qj7px")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h1w1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xfu2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dq7gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_45xcn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sjfsv"]
+radius = 8.0
+
+[node name="coin" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_h1w1y")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pdkwb")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sjfsv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

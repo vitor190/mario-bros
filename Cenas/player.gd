@@ -31,10 +31,15 @@ const POINTS_LABEL_SCENE = preload("res://Cenas/points_label.tscn")
 @export var stomp_y_velocity = -150
 @export_group("")
 
+var is_transforming = false
 var player_mode = PlayerMode.SMALL
 var is_dead = false
 
 func _physics_process(delta):
+	
+	if is_transforming:
+		return
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
@@ -94,3 +99,33 @@ func die():
 		death_tween.tween_property(self, "position", position + Vector2(0, -48), .5)
 		death_tween.chain().tween_property(self, "position", position + Vector2(0, 256), 1)
 		death_tween.tween_callback(func(): get_tree().reload_current_scene())
+		
+func small_to_big():
+	if player_mode == PlayerMode.SMALL and not is_transforming:
+		is_transforming = true
+		animated_sprite_2d.play("small_to_big")
+		await animated_sprite_2d.animation_finished
+		player_mode = PlayerMode.BIG
+		body_collision_shape_2d.scale = Vector2(1, 2)
+		is_transforming = false
+
+func small_to_shotting():
+	if player_mode == PlayerMode.SMALL and not is_transforming:
+		is_transforming = true
+		animated_sprite_2d.play("small_to_shooting")
+		await animated_sprite_2d.animation_finished
+		player_mode = PlayerMode.SHOOTING
+		body_collision_shape_2d.scale = Vector2(1, 2)
+		is_transforming = false
+		
+func big_to_shotting():
+	if player_mode == PlayerMode.BIG and not is_transforming:
+		is_transforming = true
+		animated_sprite_2d.play("big_to_shooting")
+		await animated_sprite_2d.animation_finished
+		player_mode = PlayerMode.SHOOTING
+		body_collision_shape_2d.scale = Vector2(1, 2)
+		is_transforming = false
+	
+
+	

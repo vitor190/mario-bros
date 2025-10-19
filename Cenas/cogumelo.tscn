@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://xm3vsy3wnx3w"]
+
+[ext_resource type="Script" uid="uid://chv002b21mjja" path="res://Cenas/cogumelo.gd" id="1_xr4mc"]
+[ext_resource type="Texture2D" uid="uid://80dij0rowpdx" path="res://Assets Super Mario Bros/Sprites/MagicMushroom.png" id="2_xr4mc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xhvdr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xr4mc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4vj1"]
+size = Vector2(16, 16)
+
+[node name="cogumelo" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_xr4mc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xhvdr")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l4vj1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

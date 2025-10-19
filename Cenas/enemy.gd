@@ -42,5 +42,6 @@ func _on_area_entered(area):
 		die_from_hit()
 		
 func _on_visible_on_screen_notifier_2d_screen_exited():
+	Globals.score += 100
 	queue_free()	
 	

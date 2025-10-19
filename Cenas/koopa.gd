@@ -15,6 +15,8 @@ func _ready():
 func die():
 	if !in_a_shell:
 		super.die()
+		
+	Globals.score += 100
 	
 	collision_shape_2d.set_deferred("shape", KOOPA_SHELL_SHAPE)
 	collision_shape_2d.set_deferred("position", KOOPA_SHELL_POSITION)
