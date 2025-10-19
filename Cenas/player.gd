@@ -34,6 +34,7 @@ const POINTS_LABEL_SCENE = preload("res://Cenas/points_label.tscn")
 var is_transforming = false
 var player_mode = PlayerMode.SMALL
 var is_dead = false
+var is_invulnerable = false
 
 func _physics_process(delta):
 	
@@ -95,6 +96,14 @@ func die():
 		animated_sprite_2d.play("small_death")
 		set_physics_process(false)
 		
+		Globals.score = 0
+		Globals.coins = 0
+		
+		if has_node("/root/Node2D/UI"):  
+			var ui = get_node("/root/Node2D/UI")
+			ui.score_counter.text = str("%06d" % Globals.score)
+			ui.coins_counter.text = str("%04d" % Globals.coins)
+		
 		var death_tween = get_tree().create_tween()
 		death_tween.tween_property(self, "position", position + Vector2(0, -48), .5)
 		death_tween.chain().tween_property(self, "position", position + Vector2(0, 256), 1)
@@ -126,6 +135,4 @@ func big_to_shotting():
 		player_mode = PlayerMode.SHOOTING
 		body_collision_shape_2d.scale = Vector2(1, 2)
 		is_transforming = false
-	
-
 	
