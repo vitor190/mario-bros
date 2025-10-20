@@ -12,6 +12,7 @@ enum PlayerMode{
 
 signal points_scored(points: int)
 
+const FIREBOL_SCENE = preload("res://Cenas/shoot.tscn")
 const POINTS_LABEL_SCENE = preload("res://Cenas/points_label.tscn")
 
 @onready var animated_sprite_2d = $AnimatedSprite2D as PlayerAnimatedSprite
@@ -37,6 +38,9 @@ var is_dead = false
 var is_invulnerable = false
 
 func _physics_process(delta):
+	
+	if player_mode == PlayerMode.SHOOTING and Input.is_action_just_pressed("shoot"):
+		shoot()
 	
 	if is_transforming:
 		return
@@ -135,4 +139,15 @@ func big_to_shotting():
 		player_mode = PlayerMode.SHOOTING
 		body_collision_shape_2d.scale = Vector2(1, 2)
 		is_transforming = false
+		
+func shoot():
+	var firebal = FIREBOL_SCENE.instantiate()
+	var offset_x = 16 if animated_sprite_2d.flip_h == false else -16
+	
+	firebal.position = global_position + Vector2(offset_x, -10)
+	firebal.direction = -1 if animated_sprite_2d.flip_h else 1
+	
+	animated_sprite_2d.play("shooting")
+	get_tree().root.add_child(firebal)
+	
 	

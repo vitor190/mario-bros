@@ -7,7 +7,7 @@ extends Control
 var minutes = 0
 var seconds = 0
 
-@export_range(0,5) var defadult_minutes: =1
+@export_range(0,5) var defadult_minutes: =2
 @export_range(0,59) var defadult_seconds: =0
 
 signal time_is_up()

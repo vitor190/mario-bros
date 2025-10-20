@@ -6,16 +6,19 @@ const POINTS_LABEL_SCENE = preload("res://Cenas/points_label.tscn")
 @export var horizontal_speed = 20
 @export var vertical_speed = 100
 
+@onready var ray_cast_2d2 = $RayCast2D2 as RayCast2D
 @onready var ray_cast_2d = $RayCast2D as RayCast2D
 @onready var animated_sprite_2d = $AnimatedSprite2D as AnimatedSprite2D
 
 var is_dead = false
+var direction := -1  
 
 func _process(delta):
 	position.x -= horizontal_speed * delta
 	
 	if !ray_cast_2d.is_colliding():
 		position.y += vertical_speed * delta
+	
 
 func die():
 	if is_dead:
