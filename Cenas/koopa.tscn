@@ -35,7 +35,7 @@ script = ExtResource("1_amv0p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p0sr4")
-animation = &"dead"
+animation = &"walk"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -46,7 +46,7 @@ target_position = Vector2(0, 12)
 collision_mask = 18
 
 [node name="RayCast2D2" type="RayCast2D" parent="."]
-target_position = Vector2(-10, 10)
+target_position = Vector2(-10, 0)
 collision_mask = 18
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

@@ -70,7 +70,7 @@ func _on_area_2d_area_entered(area):
 		handle_enemy_collision(area)
 		
 func handle_enemy_collision(enemy: Enemy):
-	if enemy == null||is_dead:
+	if enemy == null or is_dead or is_invulnerable:
 		return
 		
 	if is_instance_of(enemy, Koopa) and (enemy as Koopa).in_a_shell:
@@ -78,13 +78,18 @@ func handle_enemy_collision(enemy: Enemy):
 	else:
 		var angle_of_collision = rad_to_deg(position.angle_to_point(enemy.position))
 		
-		if angle_of_collision > min_stomp_degree && max_stomp_degree > angle_of_collision:
+		if angle_of_collision > min_stomp_degree and max_stomp_degree > angle_of_collision:
 			enemy.die()
 			on_enemy_stomped()
 			spawn_points_label(enemy)
 		else:
-			die()
-			
+			if player_mode == PlayerMode.BIG: 
+				become_big_to_small()
+			else:
+				die()
+			if player_mode == PlayerMode.SHOOTING:
+				become_shooting_to_small()
+				
 func on_enemy_stomped():
 	velocity.y = stomp_y_velocity
 	
@@ -95,6 +100,7 @@ func spawn_points_label(enemy):
 	points_scored.emit(100)
 	
 func die():
+	
 	if player_mode == PlayerMode.SMALL:
 		is_dead = true
 		animated_sprite_2d.play("small_death")
@@ -151,4 +157,44 @@ func shoot():
 	get_tree().root.add_child(firebal)
 	animated_sprite_2d.play("shooting")
 	
+func become_big_to_small():
+	if is_transforming or is_dead:
+		return
+		
+	is_transforming = true
+	is_invulnerable = true
+	animated_sprite_2d.play("big_to_small")
+	await animated_sprite_2d.animation_finished
 	
+	player_mode = PlayerMode.SMALL
+	body_collision_shape_2d.scale = Vector2(1, 1)
+	is_transforming = false
+	
+	var blink_tween = get_tree().create_tween()
+	for i in range(6):
+		blink_tween.tween_property(self, "modulate:a", 0.2, 0.1)
+		blink_tween.tween_property(self, "modulate:a", 1, 0.1)
+		
+	await blink_tween.finished
+	is_invulnerable = false
+
+func become_shooting_to_small():
+	if is_transforming or is_dead:
+		return
+		
+	is_transforming = true
+	is_invulnerable = true
+	animated_sprite_2d.play("shooting_to_small")
+	await animated_sprite_2d.animation_finished
+	
+	player_mode = PlayerMode.SMALL
+	body_collision_shape_2d.scale = Vector2(1, 1)
+	is_transforming = false
+	
+	var blink_tween = get_tree().create_tween()
+	for i in range(6):
+		blink_tween.tween_property(self, "modulate:a", 0.2, 0.1)
+		blink_tween.tween_property(self, "modulate:a", 1, 0.1)
+		
+	await blink_tween.finished
+	is_invulnerable = false

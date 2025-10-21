@@ -129,7 +129,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_pmvhq")
 }],
-"loop": true,
+"loop": false,
 "name": &"big_to_small",
 "speed": 5.0
 }, {
@@ -185,6 +185,35 @@ animations = [{
 }],
 "loop": true,
 "name": &"shooting_slide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_5sl0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pmvhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5sl0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pmvhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5sl0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pmvhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5sl0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pmvhq")
+}],
+"loop": false,
+"name": &"shooting_to_small",
 "speed": 5.0
 }, {
 "frames": [{
@@ -306,7 +335,7 @@ script = ExtResource("1_iersn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5p0qj")
-animation = &"shooting"
+animation = &"big_to_small"
 script = ExtResource("25_8v2xp")
 
 [node name="Area2D" type="Area2D" parent="."]
