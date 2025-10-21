@@ -1,4 +1,5 @@
 extends Area2D
+
 class_name Enemy
 
 const POINTS_LABEL_SCENE = preload("res://Cenas/points_label.tscn")
@@ -14,12 +15,17 @@ var is_dead = false
 var direction := -1  
 
 func _process(delta):
-	position.x -= horizontal_speed * delta
+	
+	if ray_cast_2d2.is_colliding():
+		direction *= -1
+		ray_cast_2d2.target_position = Vector2(5 * direction, 0)
+		animated_sprite_2d.flip_h = direction == 1
+		
+	position.x += horizontal_speed * direction * delta
 	
 	if !ray_cast_2d.is_colliding():
 		position.y += vertical_speed * delta
-	
-
+		
 func die():
 	if is_dead:
 		return

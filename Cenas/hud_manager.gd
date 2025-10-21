@@ -40,4 +40,10 @@ func reset_clock_timer():
 	seconds = defadult_seconds
 	
 func _on_time_is_up():
+	Globals.score = 0
+	Globals.coins = 0
+	
+	score_counter.text = str("%06d" % Globals.score)
+	coins_counter.text = str("%04d" % Globals.coins)
+	
 	get_tree().reload_current_scene()

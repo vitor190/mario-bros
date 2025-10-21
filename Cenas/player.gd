@@ -141,13 +141,14 @@ func big_to_shotting():
 		is_transforming = false
 		
 func shoot():
+	
 	var firebal = FIREBOL_SCENE.instantiate()
 	var offset_x = 16 if animated_sprite_2d.flip_h == false else -16
 	
 	firebal.position = global_position + Vector2(offset_x, -10)
 	firebal.direction = -1 if animated_sprite_2d.flip_h else 1
 	
-	animated_sprite_2d.play("shooting")
 	get_tree().root.add_child(firebal)
+	animated_sprite_2d.play("shooting")
 	
 	

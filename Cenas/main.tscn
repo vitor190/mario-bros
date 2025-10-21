@@ -56,7 +56,7 @@ texture = ExtResource("6_jjrtw")
 
 [sub_resource type="TileSet" id="TileSet_irhh0"]
 physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 13
+physics_layer_0/collision_mask = 9
 sources/0 = SubResource("TileSetAtlasSource_n00j1")
 sources/1 = SubResource("TileSetAtlasSource_x6di6")
 sources/2 = SubResource("TileSetAtlasSource_btbr3")
@@ -92,60 +92,65 @@ script = ExtResource("1_wnyw5")
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Goomba9" parent="Enemies" instance=ExtResource("6_n00j1")]
-position = Vector2(1607, 57)
-collision_mask = 11
-
-[node name="Goomba7" parent="Enemies" instance=ExtResource("6_n00j1")]
-position = Vector2(1384, 56)
-collision_mask = 11
-
-[node name="Goomba8" parent="Enemies" instance=ExtResource("6_n00j1")]
-position = Vector2(1334, 56)
-collision_mask = 11
-
-[node name="Goomba5" parent="Enemies" instance=ExtResource("6_n00j1")]
-position = Vector2(1236, 56)
-collision_mask = 11
-
-[node name="Koopa4" parent="Enemies" instance=ExtResource("7_x6di6")]
-position = Vector2(1435, 51)
-collision_mask = 11
-
-[node name="Koopa5" parent="Enemies" instance=ExtResource("7_x6di6")]
-position = Vector2(685, 52)
-collision_mask = 11
-
-[node name="Koopa3" parent="Enemies" instance=ExtResource("7_x6di6")]
-position = Vector2(1184, 52)
-collision_mask = 11
-
-[node name="Goomba4" parent="Enemies" instance=ExtResource("6_n00j1")]
-position = Vector2(627, 56)
-collision_mask = 11
-
-[node name="Goomba6" parent="Enemies" instance=ExtResource("6_n00j1")]
-position = Vector2(1286, 56)
-collision_mask = 11
-
 [node name="Goomba" parent="Enemies" instance=ExtResource("6_n00j1")]
-position = Vector2(127, 56)
-collision_mask = 11
+position = Vector2(38, 56)
+
+[node name="Goomba2" parent="Enemies" instance=ExtResource("6_n00j1")]
+position = Vector2(649, 56)
 
 [node name="Goomba3" parent="Enemies" instance=ExtResource("6_n00j1")]
-position = Vector2(416, 56)
-collision_mask = 11
+position = Vector2(161, 56)
 
-[node name="Koopa" parent="Enemies" instance=ExtResource("7_x6di6")]
-position = Vector2(375, 52)
-collision_mask = 11
+[node name="Goomba4" parent="Enemies" instance=ExtResource("6_n00j1")]
+position = Vector2(126, 56)
 
-[node name="Koopa2" parent="Enemies" instance=ExtResource("7_x6di6")]
-position = Vector2(567, 53)
-collision_mask = 11
+[node name="Goomba5" parent="Enemies" instance=ExtResource("6_n00j1")]
+position = Vector2(617, 56)
+
+[node name="Goomba6" parent="Enemies" instance=ExtResource("6_n00j1")]
+position = Vector2(582, 56)
+
+[node name="Goomba8" parent="Enemies" instance=ExtResource("6_n00j1")]
+position = Vector2(1191, 56)
+
+[node name="Goomba9" parent="Enemies" instance=ExtResource("6_n00j1")]
+position = Vector2(1287, 56)
 
 [node name="Goomba10" parent="Enemies" instance=ExtResource("6_n00j1")]
-position = Vector2(52, 56)
+position = Vector2(1383, 56)
+
+[node name="Goomba11" parent="Enemies" instance=ExtResource("6_n00j1")]
+position = Vector2(1591, 56)
+
+[node name="Goomba12" parent="Enemies" instance=ExtResource("6_n00j1")]
+position = Vector2(1623, 56)
+
+[node name="Goomba7" parent="Enemies" instance=ExtResource("6_n00j1")]
+position = Vector2(898, 168)
+
+[node name="Koopa" parent="Enemies" instance=ExtResource("7_x6di6")]
+position = Vector2(412, 52)
+
+[node name="Koopa2" parent="Enemies" instance=ExtResource("7_x6di6")]
+position = Vector2(360, 52)
+
+[node name="Koopa3" parent="Enemies" instance=ExtResource("7_x6di6")]
+position = Vector2(682, 52)
+
+[node name="Koopa4" parent="Enemies" instance=ExtResource("7_x6di6")]
+position = Vector2(547, 52)
+
+[node name="Koopa5" parent="Enemies" instance=ExtResource("7_x6di6")]
+position = Vector2(1240, 52)
+
+[node name="Koopa6" parent="Enemies" instance=ExtResource("7_x6di6")]
+position = Vector2(1335, 52)
+
+[node name="Koopa7" parent="Enemies" instance=ExtResource("7_x6di6")]
+position = Vector2(1430, 52)
+
+[node name="Koopa8" parent="Enemies" instance=ExtResource("7_x6di6")]
+position = Vector2(1847, 52)
 
 [node name="coins" type="Node" parent="."]
 
@@ -307,7 +312,7 @@ vertical_alignment = 1
 position = Vector2(896, -8)
 
 [node name="cogumelo" parent="cogumelo" instance=ExtResource("17_ir430")]
-position = Vector2(93, 55)
+position = Vector2(93, 56)
 
 [node name="flor" type="Node" parent="."]
 
@@ -322,8 +327,8 @@ scale = Vector2(1.275, 1.275)
 texture = ExtResource("20_erht2")
 
 [node name="PipeTop" type="Sprite2D" parent="ambiente"]
-position = Vector2(510.5, 6)
-scale = Vector2(1.28125, 1.0625)
+position = Vector2(510.25, 7)
+scale = Vector2(1.29687, 0.90625)
 texture = ExtResource("22_do340")
 
 [node name="PipeConnection" type="Sprite2D" parent="ambiente"]
