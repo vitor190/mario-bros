@@ -23,8 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://8hx0hwj6028f" path="res://Assets Super Mario Bros/Sprites/PipeConnection.png" id="21_vgp11"]
 [ext_resource type="Texture2D" uid="uid://b5sqfy41h20ks" path="res://Assets Super Mario Bros/Sprites/PipeTop.png" id="22_do340"]
 [ext_resource type="Texture2D" uid="uid://cdp0d1a4cvakq" path="res://Assets Super Mario Bros/Sprites/PipeBottom.png" id="23_lcw4w"]
-[ext_resource type="Texture2D" uid="uid://ir6sodu1lnqy" path="res://Assets Super Mario Bros/Sprites/FlagPole.png" id="24_q8etu"]
 [ext_resource type="Texture2D" uid="uid://d2wjjqv82whrs" path="res://Assets Super Mario Bros/Sprites/Flag.png" id="25_dl3br"]
+[ext_resource type="PackedScene" uid="uid://b8a714otpo00r" path="res://Cenas/flag.tscn" id="25_lcw4w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n00j1"]
 texture = ExtResource("1_lb8y5")
@@ -346,12 +346,11 @@ position = Vector2(2087.5, -31)
 scale = Vector2(2.46875, 2.125)
 texture = ExtResource("22_do340")
 
-[node name="FlagPole" type="Sprite2D" parent="ambiente"]
-position = Vector2(2085, -128)
-texture = ExtResource("24_q8etu")
-
 [node name="Flag" type="Sprite2D" parent="ambiente"]
-position = Vector2(2077, -173)
+position = Vector2(2077, -177)
 texture = ExtResource("25_dl3br")
+
+[node name="flag" parent="ambiente" instance=ExtResource("25_lcw4w")]
+position = Vector2(2086, -128)
 
 [connection signal="timeout" from="HUD/control/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]

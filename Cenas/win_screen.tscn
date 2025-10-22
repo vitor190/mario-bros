@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://bd0t5ulcdq1y2"]
+
+[ext_resource type="Texture2D" uid="uid://doexqyq4ke70g" path="res://Assets Super Mario Bros/imagens/dh17gz8-2ae21a7d-ea30-4840-ab4c-ac4769d38417.jpg" id="1_w3lse"]
+[ext_resource type="FontFile" uid="uid://dviig7jsdagow" path="res://Assets Super Mario Bros/Fonts/RetroMario-Regular.otf" id="2_ttruy"]
+[ext_resource type="Texture2D" uid="uid://c70m1phq8vlpi" path="res://Assets Super Mario Bros/imagens/the-cartoon-back-arrow-button-is-isolated-flat-design-png.webp" id="3_dbxrj"]
+[ext_resource type="Script" uid="uid://ccwp7xlfjnaah" path="res://Cenas/button.gd" id="4_usl42"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3t63"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ep0f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="Theme" id="Theme_cx8vd"]
+Button/styles/focus = SubResource("StyleBoxFlat_y3t63")
+Button/styles/hover = SubResource("StyleBoxFlat_0ep0f")
+
+[node name="WinScreen" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1334.0
+offset_bottom = 750.0
+texture = ExtResource("1_w3lse")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1158.0
+offset_bottom = 645.0
+theme_override_fonts/font = ExtResource("2_ttruy")
+theme_override_font_sizes/font_size = 120
+text = "FIM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="voltar_btn" type="Button" parent="."]
+offset_left = 23.0
+offset_top = 18.0
+offset_right = 231.0
+offset_bottom = 226.0
+scale = Vector2(0.4, 0.4)
+theme = SubResource("Theme_cx8vd")
+icon = ExtResource("3_dbxrj")
+script = ExtResource("4_usl42")
+
+[connection signal="pressed" from="voltar_btn" to="voltar_btn" method="_on_pressed"]

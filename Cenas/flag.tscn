@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8a714otpo00r"]
+
+[ext_resource type="Script" uid="uid://32ym38nikc1d" path="res://flag.gd" id="1_mka2l"]
+[ext_resource type="Texture2D" uid="uid://ir6sodu1lnqy" path="res://Assets Super Mario Bros/Sprites/FlagPole.png" id="2_32gj5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqd3m"]
+size = Vector2(8, 156)
+
+[node name="flag" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_mka2l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_32gj5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_tqd3m")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

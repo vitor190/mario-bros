@@ -8,17 +8,17 @@
 [sub_resource type="Theme" id="Theme_0ep0f"]
 Label/colors/font_color = Color(0.364706, 0.72549, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3t63"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_color = Color(0.8, 0.8, 0.8, 0)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ep0f"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3t63"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
 [sub_resource type="Theme" id="Theme_y3t63"]
-Button/styles/focus = SubResource("StyleBoxFlat_y3t63")
-Button/styles/hover = SubResource("StyleBoxFlat_0ep0f")
+Button/styles/focus = SubResource("StyleBoxFlat_0ep0f")
+Button/styles/hover = SubResource("StyleBoxFlat_y3t63")
 
 [node name="creditos" type="TextureRect"]
 offset_right = 1334.0
